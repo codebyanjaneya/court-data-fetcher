@@ -36,7 +36,13 @@ def index():
         case_number = request.form['case_number']
         case_year = request.form['case_year']
 
+        print("📥 Received input:")
+        print("Case Type:", case_type)
+        print("Case Number:", case_number)
+        print("Case Year:", case_year)
+  
         details, raw_html = fetch_case_details(case_type, case_number, case_year)
+        
 
         # Save log
         conn = sqlite3.connect("database.db")
